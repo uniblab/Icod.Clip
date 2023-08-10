@@ -1,2 +1,3 @@
 # Icod.Clip
-Clip.exe copies text to the clipboard.
+Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
+
