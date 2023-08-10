@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<!--
+        Clip.exe copies text to the clipboard.
+        Copyright (C) 2023 Timothy J. Bruce
+	-->
+
+	<PropertyGroup>
+		<RootNamespace>Icod.Clip</RootNamespace>
+		<AssemblyName>Clip</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="TextCopy" Version="6.2.1" />
+	</ItemGroup>
+
+</Project>
