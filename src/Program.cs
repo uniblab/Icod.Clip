@@ -41,16 +41,16 @@ namespace Icod.Clip {
 				System.Int32 i = -1;
 				do {
 					@switch = args[ ++i ];
-					if ( "--input".Equals( @switch, System.StringComparison.OrdinalIgnoreCase ) ) {
+					if ( new System.String[] { "--help", "-h", "/h" }.Contains( @switch, System.StringComparer.OrdinalIgnoreCase ) ) {
+						PrintUsage();
+						return 1;
+					} else if ( new System.String[] { "--copyright", "-c", "/c" }.Contains( @switch, System.StringComparer.OrdinalIgnoreCase ) ) {
+						PrintCopyright();
+						return 1;
+					} else if ( "--input".Equals( @switch, System.StringComparison.OrdinalIgnoreCase ) ) {
 						inputPathName = args[ ++i ].TrimToNull();
 					} else if ( "--output".Equals( @switch, System.StringComparison.OrdinalIgnoreCase ) ) {
 						outputPathName = args[ ++i ].TrimToNull();
-					} else if ( new System.String[] { "--help", "-h", "/h" }.Contains( inputPathName, System.StringComparer.OrdinalIgnoreCase ) ) {
-						PrintUsage();
-						return 1;
-					} else if ( new System.String[] { "--copyright", "-c", "/c" }.Contains( inputPathName, System.StringComparer.OrdinalIgnoreCase ) ) {
-						PrintCopyright();
-						return 1;
 					}
 				} while ( i < len );
 			}
