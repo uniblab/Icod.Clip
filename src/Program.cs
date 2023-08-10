@@ -88,6 +88,7 @@ namespace Icod.Clip {
 		private static void PrintUsage() {
 			System.Console.Error.WriteLine( "No, no, no! Use it like this, Einstein:" );
 			System.Console.Error.WriteLine( "Clip.exe --help" );
+			System.Console.Error.WriteLine( "Clip.exe --copyright" );
 			System.Console.Error.WriteLine( "Clip.exe [--input inputFilePathName] [--output outputFilePathName]" );
 			System.Console.Error.WriteLine( "Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file." );
 			System.Console.Error.WriteLine( "inputFilePathName and outputFilePathName may be relative or absolute paths." );
