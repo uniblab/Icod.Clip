@@ -135,11 +135,7 @@ namespace Icod.Clip {
 				line = System.Console.In.ReadLine();
 			}
 		}
-		private static System.Collections.Generic.IEnumerable<System.String> ReadFile( System.String? filePathName ) {
-			filePathName = filePathName?.TrimToNull();
-			if ( System.String.IsNullOrEmpty( filePathName ) ) {
-				throw new System.ArgumentNullException( nameof( filePathName ) );
-			}
+		private static System.Collections.Generic.IEnumerable<System.String> ReadFile( System.String filePathName ) {
 			using ( var file = System.IO.File.Open( filePathName, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read ) ) {
 				using ( var reader = new System.IO.StreamReader( file, System.Text.Encoding.UTF8, true, theBufferSize, true ) ) {
 					var line = reader.ReadLine();
@@ -159,11 +155,7 @@ namespace Icod.Clip {
 				System.Console.Out.WriteLine( datum );
 			}
 		}
-		private static void WriteFile( System.String? filePathName, System.Collections.Generic.IEnumerable<System.String> data ) {
-			filePathName = filePathName?.TrimToNull();
-			if ( System.String.IsNullOrEmpty( filePathName ) ) {
-				throw new System.ArgumentNullException( nameof( filePathName ) );
-			}
+		private static void WriteFile( System.String filePathName, System.Collections.Generic.IEnumerable<System.String> data ) {
 			using ( var file = System.IO.File.Open( filePathName, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write, System.IO.FileShare.None ) ) {
 				_ = file.Seek( 0, System.IO.SeekOrigin.Begin );
 				using ( var writer = new System.IO.StreamWriter( file, System.Text.Encoding.UTF8, theBufferSize, true ) ) {
