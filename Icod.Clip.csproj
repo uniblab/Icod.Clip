@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Clip.exe copies text to the clipboard.
+    Copyright (C) 2023 Timothy J. Bruce
+-->
 <Project Sdk="Microsoft.NET.Sdk">
-	<!--
-        Clip.exe copies text to the clipboard.
-        Copyright (C) 2023 Timothy J. Bruce
-	-->
-
 	<PropertyGroup>
 		<RootNamespace>Icod.Clip</RootNamespace>
 		<AssemblyName>Clip</AssemblyName>
@@ -15,13 +14,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Icod.Argh" Version="1.0.1" />
 		<PackageReference Include="TextCopy" Version="6.2.1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="Icod.Clip.License">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
+		<None Update="Icod.Clip.License">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
-
 </Project>
