@@ -170,7 +170,7 @@ namespace Icod.Clip {
 		}
 		#endregion io
 
-		private static System.String? TrimToNull( this System.String @string ) {
+		private static System.String? TrimToNull( this System.String? @string ) {
 			if ( System.String.IsNullOrEmpty( @string ) ) {
 				return null;
 			}
