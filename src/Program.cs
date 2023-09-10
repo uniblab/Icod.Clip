@@ -50,36 +50,28 @@ namespace Icod.Clip {
 				return 1;
 			}
 
-
-			System.String? inputPathName = null;
-			if ( processor.Contains( "input" ) ) {
-				inputPathName = processor.Value( "input" ).TrimToNull();
-				if ( System.String.IsNullOrEmpty( inputPathName ) ) {
-					PrintUsage();
-					return 1;
-				}
-			}
-			System.String? outputPathName = null;
-			if ( processor.Contains( "output" ) ) {
-				outputPathName = processor.Value( "output" ).TrimToNull();
-				if ( System.String.IsNullOrEmpty( inputPathName ) ) {
-					PrintUsage();
-					return 1;
-				}
-			}
-
 			System.Func<System.String, System.Collections.Generic.IEnumerable<System.String>> reader;
-			if ( System.String.IsNullOrEmpty( inputPathName ) ) {
-				reader = a => ReadStdIn();
+			if ( processor.TryGetValue( "input", true, out var inputPathName ) ) {
+				if ( System.String.IsNullOrEmpty( inputPathName ) ) {
+					PrintUsage();
+					return 1;
+				} else {
+					reader = a => ReadFile( a );
+				}
 			} else {
-				reader = a => ReadFile( a );
+				reader = a => ReadStdIn();
 			}
 
 			System.Action<System.String, System.Collections.Generic.IEnumerable<System.String>> writer;
-			if ( System.String.IsNullOrEmpty( outputPathName ) ) {
-				writer = ( a, b ) => WriteStdOut( b );
+			if ( processor.TryGetValue( "input", true, out var outputPathName ) ) {
+				if ( System.String.IsNullOrEmpty( outputPathName ) ) {
+					PrintUsage();
+					return 1;
+				} else {
+					writer = ( a, b ) => WriteFile( a, b );
+				}
 			} else {
-				writer = ( a, b ) => WriteFile( a, b );
+				writer = ( a, b ) => WriteStdOut( b );
 			}
 
 			var output = 0;
