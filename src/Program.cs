@@ -50,25 +50,25 @@ namespace Icod.Clip {
 				return 1;
 			}
 
-			System.Func<System.String, System.Collections.Generic.IEnumerable<System.String>> reader;
+			System.Func<System.String?, System.Collections.Generic.IEnumerable<System.String>> reader;
 			if ( processor.TryGetValue( "input", true, out var inputPathName ) ) {
 				if ( System.String.IsNullOrEmpty( inputPathName ) ) {
 					PrintUsage();
 					return 1;
 				} else {
-					reader = a => ReadFile( a );
+					reader = a => ReadFile( a! );
 				}
 			} else {
 				reader = a => ReadStdIn();
 			}
 
-			System.Action<System.String, System.Collections.Generic.IEnumerable<System.String>> writer;
+			System.Action<System.String?, System.Collections.Generic.IEnumerable<System.String>> writer;
 			if ( processor.TryGetValue( "input", true, out var outputPathName ) ) {
 				if ( System.String.IsNullOrEmpty( outputPathName ) ) {
 					PrintUsage();
 					return 1;
 				} else {
-					writer = ( a, b ) => WriteFile( a, b );
+					writer = ( a, b ) => WriteFile( a!, b );
 				}
 			} else {
 				writer = ( a, b ) => WriteStdOut( b );
