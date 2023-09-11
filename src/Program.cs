@@ -63,7 +63,7 @@ namespace Icod.Clip {
 			}
 
 			System.Action<System.String?, System.Collections.Generic.IEnumerable<System.String>> writer;
-			if ( processor.TryGetValue( "input", true, out var outputPathName ) ) {
+			if ( processor.TryGetValue( "output", true, out var outputPathName ) ) {
 				if ( System.String.IsNullOrEmpty( outputPathName ) ) {
 					PrintUsage();
 					return 1;
