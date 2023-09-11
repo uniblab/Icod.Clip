@@ -2,13 +2,13 @@
 Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
 
 ## Usage
-`Clip.exe --help`
+`Clip.exe (-h | --help | /help)`
 Displays this text.
 
-`Clip.exe --copyright`
+`Clip.exe (-c | --copyright | /copyright)`
 Displays copyright and licensing information.
 
-`Clip.exe [--input inputFilePathName] [--output outputFilePathName]`
+`Clip.exe [(-i | --input | /input) inputFilePathName] [(-o | --output | /output) outputFilePathName]`
 Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
 inputFilePathName and outputFilePathName may be relative or absolute paths.
 If inputFilePathName is omitted then input is read from StdIn.
