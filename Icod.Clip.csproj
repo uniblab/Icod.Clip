@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Clip.exe copies text to the clipboard.
-    Copyright (C) 2023 Timothy J. Bruce
+	Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
+	Copyright (C) 2023  Timothy J. Bruce
 -->
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
