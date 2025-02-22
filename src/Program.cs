@@ -1,5 +1,5 @@
 ﻿// Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
-// Copyright( C ) 2023 Timothy J. Bruce
+// Copyright( C ) 2025 Timothy J. Bruce
 
 /*
     This program is free software: you can redistribute it and/or modify
@@ -102,7 +102,7 @@ namespace Icod.Clip {
 		private static void PrintCopyright() {
 			var copy = new System.String[] {
 				"Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.",
-				"Copyright( C ) 2023 Timothy J. Bruce",
+				"Copyright( C ) 2025 Timothy J. Bruce",
 				"",
 				"This program is free software: you can redistribute it and / or modify",
 				"it under the terms of the GNU General Public License as published by",

@@ -1,6 +1,6 @@
 # Icod.Clip
 Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
-Copyright (C) 2023  Timothy J. Bruce
+Copyright (C) 2025  Timothy J. Bruce
 
 ## Usage
 `Clip.exe (-h | --help | /help)`
@@ -17,7 +17,7 @@ If outputFilePathName is omitted then output is written to StdOut.
 
 ## Copyright and Licensing
 Clip.exe reads text into the clipboard and outputs same text to either StdOut or a specified file.
-Copyright (C) 2023  Timothy J. Bruce
+Copyright (C) 2025  Timothy J. Bruce
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published 
